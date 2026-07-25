@@ -30,8 +30,8 @@ const pins: Pin[] = [
   {
     id: "moulin-rouge",
     name: "Moulin Rouge",
-    x: 42,
-    y: 25,
+    x: 39,
+    y: 27,
     day: "Tag 1",
     text: "Federboas und Scheinwerferlicht am Fuß von Montmartre — ein Cabaret-Abend, auf den sie sich am meisten freut.",
     side: "right",
@@ -66,8 +66,8 @@ const pins: Pin[] = [
   {
     id: "lv-cafe",
     name: "Café Louis Vuitton",
-    x: 26,
-    y: 39,
+    x: 29,
+    y: 48,
     day: "Tag 4",
     text: "Kaffee hoch über der Champs-Élysées — der eine Stopp, den sie sich unbedingt gewünscht hat.",
     side: "left",
@@ -79,7 +79,7 @@ const pins: Pin[] = [
     y: 57,
     day: "Tag 4",
     text: "Die eine Silhouette, die unverkennbar Paris bedeutet.",
-    side: "right",
+    side: "left",
   },
   {
     id: "versailles",
@@ -88,12 +88,32 @@ const pins: Pin[] = [
     y: 84,
     day: "Tag 3",
     text: "Eine kurze Fahrt außerhalb der Stadt — ein ganzes Schloss, erbaut für jemanden, der Schlösser genauso liebte.",
-    side: "right",
+    side: "left",
   },
 ];
 
+function PinCardContent({ pin, onClose }: { pin: Pin; onClose: () => void }) {
+  return (
+    <>
+      <button
+        onClick={onClose}
+        className="absolute right-2 top-2 text-champagne/60 hover:text-champagne"
+        aria-label="Close"
+      >
+        <X className="h-3.5 w-3.5" />
+      </button>
+      <span className="text-[0.65rem] uppercase tracking-[0.3em] text-gold-light/80">
+        {pin.day}
+      </span>
+      <h3 className="mt-1 font-serif text-lg italic text-soft-white">{pin.name}</h3>
+      <p className="mt-2 font-sans text-xs leading-relaxed text-champagne/80">{pin.text}</p>
+    </>
+  );
+}
+
 export default function ParisMap() {
   const [active, setActive] = useState<string | null>(null);
+  const activePin = pins.find((p) => p.id === active) ?? null;
 
   return (
     <section className="relative w-full bg-ink py-32 sm:py-40">
@@ -112,7 +132,7 @@ export default function ParisMap() {
       </div>
 
       <Reveal delay={0.1} className="mx-auto max-w-5xl px-6">
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-gold/20 bg-[radial-gradient(ellipse_at_center,_rgba(198,166,100,0.08),_transparent_65%)] sm:aspect-[16/10]">
+        <div className="relative aspect-[4/5] w-full rounded-sm border border-gold/20 bg-[radial-gradient(ellipse_at_center,_rgba(198,166,100,0.08),_transparent_65%)] sm:aspect-[16/10]">
           {/* hairline grid */}
           <svg className="absolute inset-0 h-full w-full opacity-[0.15]" aria-hidden>
             <defs>
@@ -173,6 +193,7 @@ export default function ParisMap() {
                 <span className="relative h-2.5 w-2.5 rounded-full bg-gold-light shadow-[0_0_12px_rgba(227,202,160,0.8)] transition-transform group-hover:scale-125" />
               </motion.button>
 
+              {/* desktop: card floats beside its pin */}
               <AnimatePresence>
                 {active === pin.id && (
                   <motion.div
@@ -180,31 +201,31 @@ export default function ParisMap() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className={`glass-dark absolute top-6 z-20 w-56 rounded-sm p-4 shadow-2xl sm:w-64 ${
+                    className={`glass-dark absolute top-6 z-20 hidden w-64 rounded-sm p-4 shadow-2xl sm:block ${
                       pin.side === "left" ? "left-0" : "right-0"
                     }`}
                   >
-                    <button
-                      onClick={() => setActive(null)}
-                      className="absolute right-2 top-2 text-champagne/60 hover:text-champagne"
-                      aria-label="Close"
-                    >
-                      <X className="h-3.5 w-3.5" />
-                    </button>
-                    <span className="text-[0.65rem] uppercase tracking-[0.3em] text-gold-light/80">
-                      {pin.day}
-                    </span>
-                    <h3 className="mt-1 font-serif text-lg italic text-soft-white">
-                      {pin.name}
-                    </h3>
-                    <p className="mt-2 font-sans text-xs leading-relaxed text-champagne/80">
-                      {pin.text}
-                    </p>
+                    <PinCardContent pin={pin} onClose={() => setActive(null)} />
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
           ))}
+
+          {/* mobile: single docked panel avoids off-screen overflow */}
+          <AnimatePresence>
+            {activePin && (
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 12 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="glass-dark absolute inset-x-3 bottom-3 z-20 rounded-sm p-4 shadow-2xl sm:hidden"
+              >
+                <PinCardContent pin={activePin} onClose={() => setActive(null)} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </Reveal>
     </section>
