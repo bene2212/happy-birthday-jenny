@@ -20,42 +20,59 @@ export default function Letter() {
               <span className="float-left mr-3 mt-1 font-serif text-6xl not-italic text-gold-deep sm:text-7xl">
                 J
               </span>
-              enny, seit fast einem Jahr kenne ich dich, seit sieben Monaten
-              gehören wir zusammen. Ich liebe dein Lachen — ehrlich gesagt,
-              mehr als jeden Witz, der es auslöst. Und ich liebe, wie du
-              einfach du selbst bist, ohne dich je zu verstellen.
+              enny, seit fast einem Jahr kenne ich dich. Es ist verrückt, wie
+              schnell du zu einem Menschen geworden bist, der aus meinem
+              Leben einfach nicht mehr wegzudenken ist.
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="font-display text-2xl italic leading-relaxed text-ink-soft sm:text-3xl">
-              Du erfüllst mein Leben, motivierst mich, Dinge auszuprobieren,
-              die ich mir allein nie zugetraut hätte — und das alles mit
-              einer Leichtigkeit, die ich vorher nicht kannte. Bei dir fühle
+              Ich liebe dein Lachen – ehrlich gesagt manchmal sogar mehr als
+              den Witz, der es auslöst. Und ich liebe, wie du einfach du
+              selbst bist, ohne dich jemals zu verstellen. Genau das macht
+              dich für mich so besonders.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="font-display text-2xl italic leading-relaxed text-ink-soft sm:text-3xl">
+              Du bereicherst mein Leben auf eine Weise, die ich vorher nicht
+              kannte. Du motivierst mich, Dinge auszuprobieren, die ich
+              alleine wahrscheinlich nie gewagt hätte, und gibst mir dabei
+              das Gefühl, dass alles ein bisschen leichter ist. Bei dir fühle
               ich mich einfach zuhause.
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="font-display text-2xl italic leading-relaxed text-ink-soft sm:text-3xl">
-              Ich hätte dir etwas schenken können, das in Papier eingepackt
-              ist — etwas, das still im Regal steht und irgendwann vergisst,
-              warum es überhaupt ausgesucht wurde.
+              Ich hätte dir etwas schenken können, das in Geschenkpapier
+              eingewickelt ist. Etwas, das man auspackt, sich anschaut und
+              irgendwann ins Regal stellt.
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="font-display text-2xl italic leading-relaxed text-ink-soft sm:text-3xl">
-              Aber Dinge verblassen. Momente nicht. Deshalb wollte ich dir
-              stattdessen eine Erinnerung schenken — eine, die nur uns
-              gehört, die niemand uns nehmen kann, und über die wir auch in
-              Jahren noch sprechen werden.
+              Aber Dinge verlieren mit der Zeit ihren Wert. Erinnerungen
+              nicht.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="font-display text-2xl italic leading-relaxed text-ink-soft sm:text-3xl">
+              Deshalb wollte ich dir dieses Jahr etwas schenken, das man
+              nicht einfach in die Hand nehmen kann. Etwas, das uns gehört.
+              Etwas, an das wir uns noch lange erinnern werden – und über
+              das wir hoffentlich auch in vielen Jahren noch gemeinsam
+              lachen und erzählen.
             </p>
           </Reveal>
 
           <Reveal delay={0.15}>
             <p className="font-display text-2xl italic leading-relaxed text-ink-soft sm:text-3xl">
-              Dieses Jahr gibt es keine Schachtel zum Öffnen.
+              Es gibt etwas viel Wertvolleres.
             </p>
           </Reveal>
         </div>
