@@ -28,12 +28,13 @@ export default function Timeline() {
           title="Ankunft"
           image={images.day1Montmartre}
           imageAlt="Straßen von Montmartre in Paris zur goldenen Stunde"
-          teaser="Wir landen, atmen durch, und Montmartre begrüßt uns mit Kopfsteinpflaster und Geigenmusik von irgendwoher, das wir nicht ganz sehen können."
+          teaser="Wir landen, atmen durch, und Montmartre begrüßt uns mit Kopfsteinpflaster und Geigenmusik von irgendwoher, das wir nicht ganz sehen können — bevor der Abend im Moulin Rouge ausklingt."
           items={[
             "Ankunft in Paris — ankommen, ohne Eile",
             "Ein ruhiger Spaziergang durch die verwinkelten Gassen von Montmartre",
-            "Abendessen in einem kleinen, romantischen Restaurant",
             "Sonnenuntergang über Paris an der Sacré-Cœur",
+            "Abendessen in einem kleinen, romantischen Restaurant",
+            "Ein Abend im Moulin Rouge",
           ]}
         />
 
@@ -64,7 +65,7 @@ export default function Timeline() {
             "Der Eiffelturm und die Wiesen des Champ de Mars",
             "Ein Moment unter dem Arc de Triomphe",
             "Bummeln über die Champs-Élysées — Louis Vuitton, Dior, Cartier in goldenem Schaufensterlicht",
-            "Abendessen auf einer Dachterrasse mit Blick über die Stadt",
+            "Kaffee im Café Louis Vuitton, hoch über den Dächern von Paris",
           ]}
         />
 

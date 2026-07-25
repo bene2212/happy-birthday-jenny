@@ -28,6 +28,15 @@ const pins: Pin[] = [
     side: "right",
   },
   {
+    id: "moulin-rouge",
+    name: "Moulin Rouge",
+    x: 42,
+    y: 25,
+    day: "Tag 1",
+    text: "Federboas und Scheinwerferlicht am Fuß von Montmartre — ein Cabaret-Abend, auf den sie sich am meisten freut.",
+    side: "right",
+  },
+  {
     id: "louvre",
     name: "Der Louvre",
     x: 54,
@@ -52,6 +61,15 @@ const pins: Pin[] = [
     y: 41,
     day: "Tag 4",
     text: "Louis Vuitton, Dior, Cartier — goldenes Licht in jedem Schaufenster.",
+    side: "left",
+  },
+  {
+    id: "lv-cafe",
+    name: "Café Louis Vuitton",
+    x: 26,
+    y: 39,
+    day: "Tag 4",
+    text: "Kaffee hoch über der Champs-Élysées — der eine Stopp, den sie sich unbedingt gewünscht hat.",
     side: "left",
   },
   {
