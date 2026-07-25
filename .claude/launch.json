@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jenny-paris-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "jenny-paris-static-export",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "out", "-l", "4001"],
+      "port": 4001
+    }
+  ]
+}
